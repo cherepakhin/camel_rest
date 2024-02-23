@@ -11,13 +11,13 @@ Cоздать небольшое приложение на <b>Kotlin</b> с ис
 
 ### Ручные тесты httpie
 
-__ru.perm.v.camelrest.EchoCtrl__:
+[ru.perm.v.camelrest.EchoCtrl](https://github.com/cherepakhin/camel_rest/blob/dev/src/main/kotlin/ru/perm/v/camelrest/rest/EchoCtrl.kt):
 
 ````shell
 $ http :8980/camel_rest/api/echo/aaa
 ````
 
-__ru.perm.v.camelrest.CamelConvertorCtrl__:
+[ru.perm.v.camelrest.CamelConvertorCtrl](https://github.com/cherepakhin/camel_rest/blob/dev/src/main/kotlin/ru/perm/v/camelrest/rest/CamelConvertorCtrl.kt):
 
 ````shell
 $ http :8980/camel_rest/api/camel/copyFile
