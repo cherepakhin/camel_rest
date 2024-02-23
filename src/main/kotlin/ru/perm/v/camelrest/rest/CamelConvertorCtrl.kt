@@ -29,7 +29,7 @@ class CamelConvertorCtrl {
         val context = DefaultCamelContext()
         context.addRoutes(CopyFileRoute())
         context.start()
-        Thread.sleep(1000);
+        Thread.sleep(1000); //TODO: remove sleep
         context.stop()
     }
 }
