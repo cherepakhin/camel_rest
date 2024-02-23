@@ -91,6 +91,7 @@ dependencies {
     implementation("io.springfox:springfox-boot-starter:$springFoxVersion")
 // validator
     implementation("org.hibernate.validator:hibernate-validator")
+    implementation("org.apache.camel:camel-core:3.10.0")
 
     kapt("jakarta.annotation:jakarta.annotation-api")
 
