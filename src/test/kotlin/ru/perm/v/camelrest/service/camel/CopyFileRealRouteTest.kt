@@ -1,5 +1,6 @@
 package ru.perm.v.camelrest.service.camel
 
+import org.apache.camel.ProducerTemplate
 import org.apache.camel.builder.RouteBuilder
 import org.apache.camel.impl.DefaultCamelContext
 import org.junit.jupiter.api.Assertions

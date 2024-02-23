@@ -9,3 +9,16 @@
 
 Cоздать небольшое приложение на <b>Kotlin</b> с использованием <b>Spring Boot</b> и  [Camel](https://camel.apache.org/).
 
+### Ручные тесты httpie
+
+__ru.perm.v.camelrest.EchoCtrl__:
+
+````shell
+$ http :8980/camel_rest/api/echo/aaa
+````
+
+__ru.perm.v.camelrest.CamelConvertorCtrl__:
+
+````shell
+$ http :8980/camel_rest/api/camel/copyFile
+````
