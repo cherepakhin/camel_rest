@@ -6,3 +6,7 @@ spring:
 
 myconfig:
   testDirectory: file:~/temp/testarea
+  camel:
+    copyFile:
+      srcDirectory: file:~/temp/testarea/srcDir
+      dstDirectory: file:~/temp/testarea/dstDir

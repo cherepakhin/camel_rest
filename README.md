@@ -25,23 +25,41 @@ $ http :8980/camel_rest/api/camel/copy_file
 
 ### Дополнительно
 
-В application.yaml добавлен __ЧАСТНЫЙ__ параметр конфигурации:
+#### Собственные параметры конфигурации в application.yaml
+
+Определение в [ru.perm.v.camelrest.EchoCtrl](https://github.com/cherepakhin/camel_rest/blob/dev/src/main/resources/application.yaml):
 
 ````yaml
 myconfig:
   testDirectory: file:~/temp/testarea
+  camel:
+    copyFile:
+      srcDirectory: file:~/temp/testarea/srcDir
+      dstDirectory: file:~/temp/testarea/dstDir
 ````
 
-Класс-контейнер:
-````kotlin
-@ConfigurationProperties("myconfig")
-@ConstructorBinding
-data class MyConfig(val testDirectory: String)
-````
+Использование: [ru.perm.v.camelrest.rest.ParamCtrl.kt](https://github.com/cherepakhin/camel_rest/blob/dev/src/main/kotlin/ru/perm/v/camelrest/rest/ParamCtrl.kt)
 
-Пример использования в  [ru.perm.v.camelrest.rest.ParamCtrl.kt](https://github.com/cherepakhin/camel_rest/blob/dev/src/main/kotlin/ru/perm/v/camelrest/rest/ParamCtrl.kt).
+Тестирование получения:
+
+````shell
+$ http 8980/camel_rest/api/params/myconfig
+
+HTTP/1.1 200 
+{
+    "camel": {
+        "copyFile": {
+            "dstDirectory": "file:~/temp/testarea/dstDir",
+            "srcDirectory": "file:~/temp/testarea/srcDir"
+        }
+    },
+    "testDirectory": "file:~/temp/testarea"
+}
+
+````
 
 Совет взят тут: [https://stackoverflow.com/questions/71689261/how-do-i-set-and-read-properties-in-a-springboot-application-using-kotlin](https://stackoverflow.com/questions/71689261/how-do-i-set-and-read-properties-in-a-springboot-application-using-kotlin)
+
 
 ### Ссылки:
 [Размещение параметров в applicaton.yaml](https://www.baeldung.com/spring-yaml)
