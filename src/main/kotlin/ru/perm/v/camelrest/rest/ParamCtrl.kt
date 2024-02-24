@@ -19,7 +19,7 @@ class ParamCtrl {
      * Get config param from application.yaml
      */
     @GetMapping("/test_directory")
-    fun testDirectory(): String? {
+    fun getTestDirectory(): String? {
         logger.info("GET param test_directory=${myConfig.testDirectory}")
         return myConfig.testDirectory
     }
