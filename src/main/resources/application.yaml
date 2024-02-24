@@ -5,4 +5,4 @@ spring:
     name: camel_rest
 
 myconfig:
-  testDirectory: file:/home/vasi/temp/testarea
+  testDirectory: file:~/temp/testarea

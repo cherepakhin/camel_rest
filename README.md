@@ -23,6 +23,21 @@ $ http :8980/camel_rest/api/echo/aaa
 $ http :8980/camel_rest/api/camel/copy_file
 ````
 
+### Дополнительно
+
+В application.yaml добавлен параметр конфигурации:
+
+````yaml
+myconfig:
+  testDirectory: file:~/temp/testarea
+````
+
+````kotlin
+@ConfigurationProperties("myconfig")
+@ConstructorBinding
+data class MyConfig(val testDirectory: String)
+````
+
 ### Ссылки:
 [Размещение параметров в applicaton.yaml](https://www.baeldung.com/spring-yaml)
 
