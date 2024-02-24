@@ -1,7 +1,9 @@
 package ru.perm.v.camelrest.camel
 
 import org.apache.camel.builder.RouteBuilder
+import org.springframework.stereotype.Component
 
+@Component
 class CopyFileRoute : RouteBuilder() {
     companion object {
         val testDirectory = "file:/home/vasi/temp/testarea"
