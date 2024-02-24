@@ -1,4 +1,4 @@
-package ru.perm.v.camelrest
+package ru.perm.v.camelrest.rest
 
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
