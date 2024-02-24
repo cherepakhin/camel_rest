@@ -20,7 +20,9 @@ class ParamCtrlMockMvcTest {
 
     @Test
     fun getTestDirectory() {
-        val mes = mockMvc.perform(MockMvcRequestBuilders.get("/params/test_directory"))
+        val mes = mockMvc.perform(
+            MockMvcRequestBuilders.get("/params/test_directory")
+        )
             .andExpect(MockMvcResultMatchers.status().isOk)
             .andReturn()
 

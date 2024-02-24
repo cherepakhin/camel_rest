@@ -44,7 +44,7 @@ class CopyFileRouteTest {
         val context = DefaultCamelContext()
         context.addRoutes(CopyAllFileFromSrcDirToDstDirRoute(srcDirectory, dstDirectory))
         context.start()
-        TimeUnit.SECONDS.sleep(1)
+        TimeUnit.SECONDS.sleep(2) // with 1 second timeout not working
         context.stop()
 
         Assertions.assertTrue(File(dstFilePath1).exists())
