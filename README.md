@@ -25,7 +25,7 @@ $ http :8980/camel_rest/api/camel/copy_file
 
 ### Дополнительно
 
-В application.yaml добавлен параметр конфигурации:
+В application.yaml добавлен __ЧАСТНЫЙ__ параметр конфигурации:
 
 ````yaml
 myconfig:
@@ -39,7 +39,7 @@ myconfig:
 data class MyConfig(val testDirectory: String)
 ````
 
-Пример использования в  [ru.perm.v.camelrest.rest.ParamCtrl.kt](https://github.com/cherepakhin/camel_rest/blob/dev/src/main/kotlin/ru/perm/v/camelrest/rest/ParamCtrl.kt):
+Пример использования в  [ru.perm.v.camelrest.rest.ParamCtrl.kt](https://github.com/cherepakhin/camel_rest/blob/dev/src/main/kotlin/ru/perm/v/camelrest/rest/ParamCtrl.kt).
 
 Совет взят тут: [https://stackoverflow.com/questions/71689261/how-do-i-set-and-read-properties-in-a-springboot-application-using-kotlin](https://stackoverflow.com/questions/71689261/how-do-i-set-and-read-properties-in-a-springboot-application-using-kotlin)
 
