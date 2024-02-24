@@ -22,3 +22,8 @@ $ http :8980/camel_rest/api/echo/aaa
 ````shell
 $ http :8980/camel_rest/api/camel/copy_file
 ````
+
+### Ссылки:
+[Размещение параметров в applicaton.yaml](https://www.baeldung.com/spring-yaml)
+
+

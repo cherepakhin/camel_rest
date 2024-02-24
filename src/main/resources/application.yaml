@@ -3,3 +3,6 @@ spring:
     active: dev
   application:
     name: camel_rest
+
+myconfig:
+  testDirectory: file:/home/vasi/temp/testarea

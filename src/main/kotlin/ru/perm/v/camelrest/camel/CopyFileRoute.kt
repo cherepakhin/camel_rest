@@ -5,11 +5,17 @@ import org.springframework.stereotype.Component
 
 @Component
 class CopyFileRoute : RouteBuilder() {
-    companion object {
-        val testDirectory = "file:/home/vasi/temp/testarea"
-        val srcDirectory = testDirectory + "/srcDir"
-        val dstDirectory = testDirectory + "/dstDir"
-    }
+
+    var testDirectory = "file:/home/vasi/temp/testarea"
+
+    val srcDirectory = testDirectory + "/srcDir"
+    val dstDirectory = testDirectory + "/dstDir"
+
+//    companion object {
+//        val srcDirectory = testDirectory + "/srcDir"
+//        val dstDirectory = testDirectory + "/dstDir"
+//    }
+
 
     /**
      * Copy file from src to dst
