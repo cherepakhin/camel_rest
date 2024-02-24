@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
-import ru.perm.v.camelrest.camel.CopyFileRoute
+import ru.perm.v.camelrest.camel.CamelCopyFileRoute
 
 @RestController
 @RequestMapping("/camel")
@@ -15,7 +15,7 @@ class CamelConvertorCtrl {
     private val logger = LoggerFactory.getLogger(this.javaClass.name)
 
     @Autowired
-    var copyFileRoute: CopyFileRoute? = null
+    var camelCopyFileRoute: CamelCopyFileRoute? = null
 
     private var counter = 0L
 
@@ -31,7 +31,7 @@ class CamelConvertorCtrl {
     @GetMapping("/copy_file")
     fun copyFile() {
         val context = DefaultCamelContext()
-        context.addRoutes(copyFileRoute)
+        context.addRoutes(camelCopyFileRoute)
         context.start()
         // добавили метод sleep, чтобы дать приложению Camel время на копирование файлов https://habr.com/ru/companies/redhatrussia/articles/352188/
         Thread.sleep(2000);

@@ -9,7 +9,7 @@ import java.nio.file.Files
 import java.nio.file.Path
 import java.util.concurrent.TimeUnit
 
-class CopyFileRouteTest {
+class CamelCopyFileRouteTest {
     /**
      * Copy all files from directory "~/temp/testarea/srcDir"
      * to directory "~/temp/testarea/dstDir".

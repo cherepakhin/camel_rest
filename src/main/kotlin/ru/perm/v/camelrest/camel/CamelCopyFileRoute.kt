@@ -4,7 +4,7 @@ import org.apache.camel.builder.RouteBuilder
 import org.springframework.stereotype.Component
 
 @Component
-class CopyFileRoute : RouteBuilder() {
+class CamelCopyFileRoute : RouteBuilder() {
 
     var testDirectory = "file:/home/vasi/temp/testarea"
 
