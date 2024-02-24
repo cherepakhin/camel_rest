@@ -30,7 +30,7 @@ class CamelConvertorCtrl {
         context.addRoutes(CopyFileRoute())
         context.start()
         // добавили метод sleep, чтобы дать приложению Camel время на копирование файлов https://habr.com/ru/companies/redhatrussia/articles/352188/
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         context.stop()
     }
 }

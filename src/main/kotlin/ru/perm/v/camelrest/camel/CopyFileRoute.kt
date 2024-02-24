@@ -4,7 +4,9 @@ import org.apache.camel.builder.RouteBuilder
 
 class CopyFileRoute : RouteBuilder() {
     companion object {
-        val dstDirectory = "/home/vasi/temp/testarea/dstDir"
+        val testDirectory = "file:/home/vasi/temp/testarea"
+        val srcDirectory = testDirectory + "/srcDir"
+        val dstDirectory = testDirectory + "/dstDir"
     }
 
     /**
@@ -15,7 +17,7 @@ class CopyFileRoute : RouteBuilder() {
     override fun configure() {
 //      Параметр noop означает, что исходные файлы надо оставить на месте, иначе Camel перенесет их
 //      https://habr.com/ru/companies/redhatrussia/articles/352188/
-        from("file:/home/vasi/temp/testarea/srcDir?noop=true")
-            .to("file:" + dstDirectory)
+        from(srcDirectory + "?noop=true")
+            .to(dstDirectory)
     }
 }
