@@ -27,7 +27,7 @@ $ http :8980/camel_rest/api/camel/copy_file
 
 #### Собственные параметры конфигурации в application.yaml
 
-Определение в [ru.perm.v.camelrest.EchoCtrl](https://github.com/cherepakhin/camel_rest/blob/dev/src/main/resources/application.yaml):
+Определение в [application.yaml](https://github.com/cherepakhin/camel_rest/blob/dev/src/main/resources/application.yaml):
 
 ````yaml
 myconfig:
