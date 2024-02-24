@@ -20,7 +20,7 @@ class ParamCtrl {
      */
     @GetMapping("/test_directory")
     fun getTestDirectory(): String? {
-        logger.info("GET param test_directory=${myConfig.testDirectory}")
+        logger.info("GET param \"myConfig.testDirectory\" = ${myConfig.testDirectory}")
         return myConfig.testDirectory
     }
 }
