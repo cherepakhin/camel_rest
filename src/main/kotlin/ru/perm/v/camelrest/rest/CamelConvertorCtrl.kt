@@ -20,7 +20,7 @@ class CamelConvertorCtrl {
     private var counter = 0L
 
     @GetMapping("/echo/{mes}")
-    fun echoStr(
+    fun echo(
         @PathVariable("mes")
         mes: String
     ): String {
