@@ -33,7 +33,7 @@ class CamelConvertorCtrl {
         val context = DefaultCamelContext()
         context.addRoutes(camelCopyFileRoute)
         context.start()
-        // добавили метод sleep, чтобы дать приложению Camel время на копирование файлов https://habr.com/ru/companies/redhatrussia/articles/352188/
+        // добавил метод sleep, чтобы дать приложению Camel время на копирование файлов https://habr.com/ru/companies/redhatrussia/articles/352188/
         Thread.sleep(2000);
         context.stop()
     }
