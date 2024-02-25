@@ -5,8 +5,8 @@ spring:
     name: camel_rest
 
 myconfig:
-  testDirectory: file:~/temp/testarea
-  camel:
-    copyFile:
-      srcDirectory: file:~/temp/testarea/srcDir
-      dstDirectory: file:~/temp/testarea/dstDir
+  testDirectory: file:temp/testarea # directory temp in project root //camel_rest/temp
+  camelContainer:
+    jobParamCopyFile:
+      srcDirectory: file:temp/testarea/srcDir
+      dstDirectory: file:temp/testarea/dstDir

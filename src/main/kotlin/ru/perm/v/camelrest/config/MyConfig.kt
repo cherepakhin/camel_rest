@@ -5,4 +5,4 @@ import org.springframework.boot.context.properties.ConstructorBinding
 
 @ConfigurationProperties("myconfig")
 @ConstructorBinding
-data class MyConfig(val testDirectory: String, val camel: Camel)
+data class MyConfig(val testDirectory: String, val camelContainer: CamelContainer)

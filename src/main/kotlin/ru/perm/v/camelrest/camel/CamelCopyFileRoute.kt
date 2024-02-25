@@ -8,19 +8,8 @@ import ru.perm.v.camelrest.config.MyConfig
 @Component
 class CamelCopyFileRoute : RouteBuilder() {
 
-    var testDirectory = "file:/home/vasi/temp/testarea"
-
     @Autowired
     lateinit var myConfig: MyConfig
-
-    val srcDirectory = testDirectory + "/srcDir"
-    val dstDirectory = testDirectory + "/dstDir"
-
-//    companion object {
-//        val srcDirectory = testDirectory + "/srcDir"
-//        val dstDirectory = testDirectory + "/dstDir"
-//    }
-
 
     /**
      * Copy file from src to dst
@@ -28,9 +17,12 @@ class CamelCopyFileRoute : RouteBuilder() {
      * @see ru.perm.v.camelrest.CamelConvertorCtrl.copyFile()
      */
     override fun configure() {
-//      Параметр noop означает, что исходные файлы надо оставить на месте, иначе Camel перенесет их
+//      Параметр "noop" означает, что исходные файлы надо оставить на месте, иначе Camel перенесет их
 //      https://habr.com/ru/companies/redhatrussia/articles/352188/
-        from(srcDirectory + "?noop=true")
-            .to(dstDirectory)
+//        from(srcDirectory + "?noop=true")
+//            .to(dstDirectory)
+        println(myConfig)
+        from(myConfig.camelContainer.jobParamCopyFile.srcDirectory + "?noop=true")
+            .to(myConfig.camelContainer.jobParamCopyFile.dstDirectory)
     }
 }

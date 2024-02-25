@@ -13,7 +13,7 @@ import ru.perm.v.camelrest.CamelConvertorCtrl
 
 @ExtendWith(SpringExtension::class)
 @WebMvcTest(CamelConvertorCtrl::class)
-class CamelConvertorCtrlMockMvcTest {
+class CamelContainerConvertorCtrlMockMvcTest {
 
     @Autowired
     lateinit private var mockMvc: MockMvc
