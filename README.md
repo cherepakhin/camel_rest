@@ -20,7 +20,7 @@ $ http :8980/camel_rest/api/echo/aaa
 [ru.perm.v.camelrest.CamelConvertorCtrl](https://github.com/cherepakhin/camel_rest/blob/dev/src/main/kotlin/ru/perm/v/camelrest/rest/CamelConvertorCtrl.kt):
 
 ````shell
-$ http :8980/camel_rest/api/camel/copy_file
+$ http http://127.0.0.1:8980/camel_rest/api/camel/copy_file
 ````
 
 ### Дополнительно

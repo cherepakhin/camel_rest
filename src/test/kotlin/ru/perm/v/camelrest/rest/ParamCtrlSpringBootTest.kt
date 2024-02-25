@@ -19,7 +19,7 @@ class ParamCtrlSpringBootTest(@Autowired private val paramCtrl: ParamCtrl) {
         val myConfig = paramCtrl.getParamMyConfigTestDirectory()
 
         assertNotNull(myConfig)
-        assertEquals("file:temp/testarea", myConfig.testDirectory)
+        assertEquals("file:temp/testarea", myConfig.camelContainer.jobParamCopyFile.dstDirectory)
     }
 
     @Test

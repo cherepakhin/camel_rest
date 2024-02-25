@@ -31,7 +31,7 @@ class ParamCtrl {
      */
     @GetMapping("/myconfig")
     fun getParamMyConfigTestDirectory(): MyConfig {
-        logger.info("GET param \"myConfig.testDirectory\" = ${myConfig.testDirectory}")
+        logger.info("GET param \"myConfig.testDirectory\" = ${myConfig.camelContainer.jobParamCopyFile.dstDirectory}")
         return myConfig
     }
 
