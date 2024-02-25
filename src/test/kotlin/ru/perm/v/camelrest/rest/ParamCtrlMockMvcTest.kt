@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
+import org.springframework.boot.test.mock.mockito.MockBean
 import org.springframework.test.context.junit.jupiter.SpringExtension
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders
@@ -18,15 +19,15 @@ class ParamCtrlMockMvcTest {
     @Autowired
     lateinit private var mockMvc: MockMvc
 
-//@TODO
-//    @Test
-//    fun getTestDirectory() {
-//        val mes = mockMvc.perform(
-//            MockMvcRequestBuilders.get("/params/test_directory")
-//        )
-//            .andExpect(MockMvcResultMatchers.status().isOk)
-//            .andReturn()
-//
-//        assertEquals("file:~/temp/testarea", mes.response.contentAsString)
-//    }
+    @MockBean
+    lateinit private var myConfig: MyConfig
+
+    @Test
+    fun checkEchoMessage() {
+        val mes = mockMvc.perform(MockMvcRequestBuilders.get("/params/echo/ECHO_MESSAGE"))
+            .andExpect(MockMvcResultMatchers.status().isOk)
+            .andReturn()
+
+        assertEquals("ECHO_MESSAGE", mes.response.contentAsString)
+    }
 }

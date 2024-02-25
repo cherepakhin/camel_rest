@@ -9,7 +9,7 @@ description = "Tests Apache Camel"
 java.sourceCompatibility = JavaVersion.VERSION_11
 var springBootVersion = "2.5.6"
 var springDependencyManagement = "1.0.3.RELEASE"
-var mockitoKotlinVersion = "4.0.0"
+var mockitoKotlinVersion = "4.8.0"
 var springFoxVersion = "3.0.0"
 
 buildscript {
@@ -100,7 +100,9 @@ dependencies {
     }
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
-    testImplementation("org.mockito.kotlin:mockito-kotlin:$mockitoKotlinVersion")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:5.2.0")
+    testImplementation("org.mockito:mockito-inline:5.2.0")
+
 
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 }
