@@ -13,6 +13,6 @@ myconfig:
   testDirectory: file:temp/testarea
   camelContainer:
     jobParamCopyFile:
-      srcDirectory: file:temp/testarea/srcDir
-      dstDirectory: file:temp/testarea/dstDir
+      srcDirectory: file:/tmp/testarea/srcDir
+      dstDirectory: file:/tmp/testarea/dstDir
 
