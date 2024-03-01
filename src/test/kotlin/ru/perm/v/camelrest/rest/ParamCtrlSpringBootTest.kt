@@ -22,9 +22,9 @@ class ParamCtrlSpringBootTest(@Autowired private val paramCtrl: ParamCtrl) {
         assertNotNull(myConfig.camelContainer)
         assertNotNull(myConfig.camelContainer.jobParamCopyFile)
 
-        assertEquals("file:temp/testarea/srcDir",
+        assertEquals("file:/tmp/testarea/srcDir",
             myConfig.camelContainer.jobParamCopyFile.srcDirectory)
-        assertEquals("file:temp/testarea/dstDir",
+        assertEquals("file:/tmp/testarea/dstDir",
             myConfig.camelContainer.jobParamCopyFile.dstDirectory)
     }
 }

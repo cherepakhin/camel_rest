@@ -10,7 +10,7 @@ camel:
 
 
 myconfig:
-  testDirectory: file:temp/testarea
+  testDirectory: file:/tmp/testarea
   camelContainer:
     jobParamCopyFile:
       srcDirectory: file:/tmp/testarea/srcDir
