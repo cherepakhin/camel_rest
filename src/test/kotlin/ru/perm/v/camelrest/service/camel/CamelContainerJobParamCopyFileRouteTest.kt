@@ -29,14 +29,14 @@ class CamelContainerJobParamCopyFileRouteTest {
 
         override fun configure() {
             from("file:" + srcDirectory + "?noop=true")
-                .to("file:" + dstDirectory +"?flatten=true")
+                .to("file:" + dstDirectory + "?flatten=true")
         }
     }
 
     @Test
     fun runRoute() {
-        val srcDirectory = "/home/vasi/temp/testarea/srcDir"
-        val dstDirectory = "/home/vasi/temp/testarea/dstDir"
+        val srcDirectory = "temp/testarea/srcDir"
+        val dstDirectory = "temp/testarea/dstDir"
 
         val dstFilePath1 = "$dstDirectory/file1.txt"
         val dstFilePath2 = "$dstDirectory/file2.txt"
@@ -59,5 +59,16 @@ class CamelContainerJobParamCopyFileRouteTest {
 
         Assertions.assertTrue(File(dstFilePath1).exists())
         Assertions.assertTrue(File(dstFilePath2).exists())
+    }
+
+    @Test
+    fun createFile() {
+        val srcDirectory = "temp/testarea/srcDir"
+        val file = File(srcDirectory + "/file1.txt")
+        if(!file.exists()) {
+            file.createNewFile()
+        }
+        Assertions.assertTrue(file.exists());
+        Files.deleteIfExists(file.toPath())
     }
 }
