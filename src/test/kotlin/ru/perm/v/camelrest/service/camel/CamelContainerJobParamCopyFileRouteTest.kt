@@ -63,7 +63,7 @@ class CamelContainerJobParamCopyFileRouteTest {
 // или тупо так сделать задержку, вместо
 // val notify = NotifyBuilder(context).whenDone(1).create()
 // val matches = notify.matches(2, TimeUnit.SECONDS)
-//        TimeUnit.SECONDS.sleep(2) // with 1 second timeout not working
+        TimeUnit.SECONDS.sleep(2) // wait 2 sec. With 1 second timeout not working
         context.stop()
 
         Assertions.assertTrue(File(dstFilePath1).exists())
