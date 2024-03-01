@@ -1,5 +1,6 @@
 package ru.perm.v.camelrest.service.camel
 
+import org.apache.camel.builder.NotifyBuilder
 import org.apache.camel.builder.RouteBuilder
 import org.apache.camel.impl.DefaultCamelContext
 import org.junit.jupiter.api.Assertions
@@ -8,6 +9,7 @@ import java.io.File
 import java.nio.file.Files
 import java.nio.file.Path
 import java.util.concurrent.TimeUnit
+
 
 class CamelContainerJobParamCopyFileRouteTest {
     /**
@@ -42,9 +44,17 @@ class CamelContainerJobParamCopyFileRouteTest {
         Files.deleteIfExists(Path.of(dstFilePath2))
 
         val context = DefaultCamelContext()
+// ждать одно задание "whenDone(1)"
+        val notify = NotifyBuilder(context).whenDone(1).create()
         context.addRoutes(CopyAllFileFromSrcDirToDstDirRoute(srcDirectory, dstDirectory))
         context.start()
-        TimeUnit.SECONDS.sleep(2) // with 1 second timeout not working
+// ждать 2 секунды или пока не выполнится 1 задание см. выше ....whenDone(1)...
+        val matches = notify.matches(2, TimeUnit.SECONDS)
+        Assertions.assertTrue(matches)
+// или тупо так сделать задержку, вместо
+// val notify = NotifyBuilder(context).whenDone(1).create()
+// val matches = notify.matches(2, TimeUnit.SECONDS)
+//        TimeUnit.SECONDS.sleep(2) // with 1 second timeout not working
         context.stop()
 
         Assertions.assertTrue(File(dstFilePath1).exists())

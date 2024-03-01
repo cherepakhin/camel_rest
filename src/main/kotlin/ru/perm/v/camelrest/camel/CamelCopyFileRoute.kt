@@ -27,7 +27,8 @@ class CamelCopyFileRoute(@Autowired val myConfig: MyConfig) : RouteBuilder() {
 //            .to(dstDirectory)
 
 // WORKED. Real variant
-        from(myConfig.camelContainer.jobParamCopyFile.srcDirectory + "?noop=true")
+//        from(myConfig.camelContainer.jobParamCopyFile.srcDirectory + "?noop=true")
+        from(myConfig.camelContainer.jobParamCopyFile.srcDirectory)
             .to(myConfig.camelContainer.jobParamCopyFile.dstDirectory)
         logger.info("Copy files from ${myConfig.camelContainer.jobParamCopyFile.srcDirectory} to ${myConfig.camelContainer.jobParamCopyFile.dstDirectory}")
 

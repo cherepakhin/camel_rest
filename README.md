@@ -9,6 +9,9 @@
 
 Cоздать небольшое приложение на <b>Kotlin</b> с использованием <b>Spring Boot</b> и  [Camel](https://camel.apache.org/).
 
+Подобный проект на __Java__ [https://github.com/cherepakhin/spring-boot-camel](https://github.com/cherepakhin/spring-boot-camel):
+
+
 ### Ручные тесты httpie
 
 [ru.perm.v.camelrest.EchoCtrl](https://github.com/cherepakhin/camel_rest/blob/dev/src/main/kotlin/ru/perm/v/camelrest/rest/EchoCtrl.kt):
@@ -25,6 +28,26 @@ $ http http://127.0.0.1:8980/camel_rest/api/camel/copy_file
 
 ### Дополнительно
 
+[application.yaml](https://github.com/cherepakhin/spring-boot-camel/blob/main/src/main/resources/application.yaml):
+
+````shell
+camel:
+    springboot:
+        main-run-controller: true
+````
+
+Запускает контроллер Camel и заменяет:
+
+````shell
+val context = DefaultCamelContext()
+context.addRoutes(camelCopyFileRoute)
+context.start()
+context.stop()
+````
+
+(см. [https://github.com/cherepakhin/camel_rest](https://github.com/cherepakhin/camel_rest/blob/dev/src/main/kotlin/ru/perm/v/camelrest/rest/CamelConvertorCtrl.kt))
+
+
 #### Собственные параметры конфигурации в application.yaml
 
 Определение в [application.yaml](https://github.com/cherepakhin/camel_rest/blob/dev/src/main/resources/application.yaml):
@@ -37,6 +60,7 @@ myconfig:
       srcDirectory: file:~/temp/testarea/srcDir
       dstDirectory: file:~/temp/testarea/dstDir
 ````
+
 
 Использование: [ru.perm.v.camelrest.rest.ParamCtrl.kt](https://github.com/cherepakhin/camel_rest/blob/dev/src/main/kotlin/ru/perm/v/camelrest/rest/ParamCtrl.kt)
 

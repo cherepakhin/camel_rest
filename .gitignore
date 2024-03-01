@@ -41,4 +41,6 @@ log/
 
 .gradle/
 
-testarea/dstDir/
+temp/
+
+

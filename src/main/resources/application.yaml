@@ -4,9 +4,15 @@ spring:
   application:
     name: camel_rest
 
+camel:
+  springboot:
+    main-run-controller: true
+
+
 myconfig:
-  testDirectory: file:temp/testarea # directory temp in project root //camel_rest/temp
+  testDirectory: file:temp/testarea
   camelContainer:
     jobParamCopyFile:
       srcDirectory: file:temp/testarea/srcDir
       dstDirectory: file:temp/testarea/dstDir
+

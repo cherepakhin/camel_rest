@@ -103,7 +103,6 @@ dependencies {
     testImplementation("org.mockito.kotlin:mockito-kotlin:5.2.0")
     testImplementation("org.mockito:mockito-inline:5.2.0")
 
-
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 }
 
