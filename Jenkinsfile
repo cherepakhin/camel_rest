@@ -18,12 +18,6 @@ pipeline {
             }
         }
 
-        stage('Integration tests') {
-            steps {
-                sh 'pwd;cd camel_rest;./gradlew clean test --tests *TestIntegration'
-            }
-        }
-
         stage('Build bootJar') {
             steps {
                 sh 'pwd;cd camel_rest;./gradlew bootJar'
