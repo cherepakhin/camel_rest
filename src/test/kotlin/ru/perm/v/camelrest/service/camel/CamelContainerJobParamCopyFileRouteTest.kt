@@ -38,6 +38,15 @@ class CamelContainerJobParamCopyFileRouteTest {
         val srcDirectory = "temp/testarea/srcDir"
         val dstDirectory = "temp/testarea/dstDir"
 
+        val file1 = File(srcDirectory + "/file1.txt")
+        if(!file1.exists()) {
+            file1.createNewFile()
+        }
+        val file2 = File(srcDirectory + "/file2.txt")
+        if(!file2.exists()) {
+            file2.createNewFile()
+        }
+
         val dstFilePath1 = "$dstDirectory/file1.txt"
         val dstFilePath2 = "$dstDirectory/file2.txt"
         Files.deleteIfExists(Path.of(dstFilePath1))
@@ -59,6 +68,9 @@ class CamelContainerJobParamCopyFileRouteTest {
 
         Assertions.assertTrue(File(dstFilePath1).exists())
         Assertions.assertTrue(File(dstFilePath2).exists())
+
+        Files.deleteIfExists(file1.toPath())
+        Files.deleteIfExists(file2.toPath())
     }
 
     @Test
