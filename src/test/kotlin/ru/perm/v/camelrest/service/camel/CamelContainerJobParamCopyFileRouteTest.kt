@@ -23,10 +23,6 @@ class CamelContainerJobParamCopyFileRouteTest {
         private var srcDirectory: String,
         private var dstDirectory: String
     ) : RouteBuilder() {
-        init {
-            this
-        }
-
         override fun configure() {
             from("file:" + srcDirectory + "?noop=true")
                 .to("file:" + dstDirectory + "?flatten=true")
