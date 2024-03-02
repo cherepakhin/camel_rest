@@ -61,7 +61,7 @@ myconfig:
       dstDirectory: ${myconfig.testDirectory}/dstDir
 ````
 
-> **_NOTE:_** (в yaml файле Использована общая переменная __myconfig.testDirectory__)
+> **_NOTE:_** (в yaml файле использована общая переменная __myconfig.testDirectory__)
 
 Использование: [ru.perm.v.camelrest.rest.ParamCtrl.kt](https://github.com/cherepakhin/camel_rest/blob/dev/src/main/kotlin/ru/perm/v/camelrest/rest/ParamCtrl.kt)
 
