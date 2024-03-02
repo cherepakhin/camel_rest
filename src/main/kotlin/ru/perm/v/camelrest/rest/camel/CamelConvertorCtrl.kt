@@ -1,4 +1,4 @@
-package ru.perm.v.camelrest
+package ru.perm.v.camelrest.rest.camel
 
 import org.apache.camel.impl.DefaultCamelContext
 import org.slf4j.LoggerFactory

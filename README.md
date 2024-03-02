@@ -11,8 +11,7 @@ Cоздать небольшое приложение на <b>Kotlin</b> с ис
 
 Подобный проект на __Java__ [https://github.com/cherepakhin/spring-boot-camel](https://github.com/cherepakhin/spring-boot-camel).
 
-
-### Ручные тесты httpie
+### Ручная проверка работоспособности сервиса
 
 [ru.perm.v.camelrest.EchoCtrl](https://github.com/cherepakhin/camel_rest/blob/dev/src/main/kotlin/ru/perm/v/camelrest/rest/EchoCtrl.kt):
 
@@ -20,13 +19,21 @@ Cоздать небольшое приложение на <b>Kotlin</b> с ис
 $ http :8980/camel_rest/api/echo/aaa
 ````
 
-[ru.perm.v.camelrest.CamelConvertorCtrl](https://github.com/cherepakhin/camel_rest/blob/dev/src/main/kotlin/ru/perm/v/camelrest/rest/CamelConvertorCtrl.kt):
+### Для демонстрации сделаны Rest контроллеры в пакете [ru.perm.v.camelrest.rest.camel](https://github.com/cherepakhin/camel_rest/blob/dev/src/main/kotlin/ru/perm/v/camelrest/rest/camel/).
+
+Для отправки запросов в REST Controller использована утилита [httpie](https://httpie.io/).
+
+## Функции Camel
+
+### Копирование файлов
+
+[ru.perm.v.camelrest.camel.CamelCopyFileRoute](https://github.com/cherepakhin/camel_rest/blob/dev/src/main/kotlin/ru/perm/v/camelrest/rest/camel/CamelCopyFileRoute.kt):
 
 ````shell
 $ http http://127.0.0.1:8980/camel_rest/api/camel/copy_file
 ````
 
-### Дополнительно
+### Примечания
 
 [application.yaml](https://github.com/cherepakhin/spring-boot-camel/blob/main/src/main/resources/application.yaml):
 
