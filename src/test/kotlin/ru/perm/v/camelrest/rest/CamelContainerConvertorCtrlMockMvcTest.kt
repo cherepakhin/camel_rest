@@ -9,7 +9,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers
-import ru.perm.v.camelrest.CamelConvertorCtrl
+import ru.perm.v.camelrest.rest.camel.CamelConvertorCtrl
 
 @ExtendWith(SpringExtension::class)
 @WebMvcTest(CamelConvertorCtrl::class)
