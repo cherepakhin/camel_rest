@@ -27,6 +27,7 @@ class CamelCopyFileRoute(@Autowired val myConfig: MyConfig) : RouteBuilder() {
 //            .to(dstDirectory)
 
 // WORKED. Real variant
+//      Параметр "noop" означает, что исходные файлы надо оставить на месте, иначе Camel перенесет их
 //        from(myConfig.camelContainer.jobParamCopyFile.srcDirectory + "?noop=true")
         from(myConfig.camelContainer.jobParamCopyFile.srcDirectory)
             .to(myConfig.camelContainer.jobParamCopyFile.dstDirectory)

@@ -54,13 +54,14 @@ context.stop()
 
 ````yaml
 myconfig:
-  testDirectory: file:~/temp/testarea
-  camel:
-    copyFile:
-      srcDirectory: file:~/temp/testarea/srcDir
-      dstDirectory: file:~/temp/testarea/dstDir
+  testDirectory: file:/tmp/testarea
+  camelContainer:
+    jobParamCopyFile:
+      srcDirectory: ${myconfig.testDirectory}/srcDir
+      dstDirectory: ${myconfig.testDirectory}/dstDir
 ````
 
+> **_NOTE:_** (в yaml файле Использована общая переменная __myconfig.testDirectory__)
 
 Использование: [ru.perm.v.camelrest.rest.ParamCtrl.kt](https://github.com/cherepakhin/camel_rest/blob/dev/src/main/kotlin/ru/perm/v/camelrest/rest/ParamCtrl.kt)
 
