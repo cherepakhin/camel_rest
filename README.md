@@ -65,7 +65,7 @@ myconfig:
 
 __myconfig__ использован в [ru.perm.v.camelrest.rest.ParamCtrl.kt](https://github.com/cherepakhin/camel_rest/blob/dev/src/main/kotlin/ru/perm/v/camelrest/rest/ParamCtrl.kt)
 
-Тестирование получения:
+Тестирование получения параметров Camel параметров:
 
 ````shell
 $ http 8980/camel_rest/api/params/myconfig
@@ -74,11 +74,11 @@ HTTP/1.1 200
 {
     "camel": {
         "copyFile": {
-            "dstDirectory": "file:~/temp/testarea/dstDir",
-            "srcDirectory": "file:~/temp/testarea/srcDir"
+            "dstDirectory": "file:~/tmp/testarea/dstDir",
+            "srcDirectory": "file:~/tmp/testarea/srcDir"
         }
     },
-    "testDirectory": "file:~/temp/testarea"
+    "testDirectory": "file:~/tmp/testarea"
 }
 
 ````
