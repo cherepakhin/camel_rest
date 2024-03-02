@@ -63,7 +63,7 @@ myconfig:
 
 > (в yaml файле использована общая переменная __myconfig.testDirectory__)
 
-Использование: [ru.perm.v.camelrest.rest.ParamCtrl.kt](https://github.com/cherepakhin/camel_rest/blob/dev/src/main/kotlin/ru/perm/v/camelrest/rest/ParamCtrl.kt)
+__myconfig__ использован в [ru.perm.v.camelrest.rest.ParamCtrl.kt](https://github.com/cherepakhin/camel_rest/blob/dev/src/main/kotlin/ru/perm/v/camelrest/rest/ParamCtrl.kt)
 
 Тестирование получения:
 
