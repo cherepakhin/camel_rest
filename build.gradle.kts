@@ -83,16 +83,28 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web") {
         exclude("org.springframework.boot:spring-boot-starter-tomcat")
     }
-    implementation("org.springframework.boot:spring-boot-starter-jetty") // jetty uses less memory
-
+    implementation("org.springframework.boot:spring-boot-starter-jetty") // jetty uses less memory, But Only consumer is supported https://camel.apache.org/components/4.4.x/jetty-component.html
+//    implementation("org.springframework.boot:spring-boot-starter-tomcat")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
 // https://mvnrepository.com/artifact/io.springfox/springfox-boot-starter
     implementation("io.springfox:springfox-boot-starter:$springFoxVersion")
 // validator
     implementation("org.hibernate.validator:hibernate-validator")
-    implementation("org.apache.camel:camel-core:3.10.0")
+// camel
+//    implementation("org.apache.camel.springboot:camel-servlet-starter:4.3.0")
+//    implementation("org.apache.camel.springboot:camel-jackson-starter:4.3.0")
+//    implementation("org.apache.camel.springboot:camel-swagger-java-starter:3.22.0")
+//    implementation("org.apache.camel.springboot:camel-spring-boot-starter:4.3.0")
+//    implementation("jakarta.servlet:jakarta.servlet-api:5.0.0")
+// https://mvnrepository.com/artifact/org.apache.camel.springboot/camel-jetty-starter
+    // https://mvnrepository.com/artifact/org.apache.camel.springboot/camel-spring-boot-starter
+    implementation("org.apache.camel.springboot:camel-spring-boot-starter:4.3.0")
 
+    implementation("jakarta.servlet:jakarta.servlet-api:5.0.0")
+// https://mvnrepository.com/artifact/jakarta.activation/jakarta.activation-api
+    implementation("jakarta.activation:jakarta.activation-api:2.1.2")
+//    implementation("com.sun.activation:javax.activation:1.2.0")
     kapt("jakarta.annotation:jakarta.annotation-api")
 
     testImplementation ("org.springframework.boot:spring-boot-starter-test") {

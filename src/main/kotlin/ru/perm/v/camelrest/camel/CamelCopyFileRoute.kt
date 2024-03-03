@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 import ru.perm.v.camelrest.config.MyConfig
 
+
 @Component
 class CamelCopyFileRoute(@Autowired val myConfig: MyConfig) : RouteBuilder() {
 
