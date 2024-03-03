@@ -92,13 +92,6 @@ dependencies {
 // validator
     implementation("org.hibernate.validator:hibernate-validator")
 // camel
-//    implementation("org.apache.camel.springboot:camel-servlet-starter:4.3.0")
-//    implementation("org.apache.camel.springboot:camel-jackson-starter:4.3.0")
-//    implementation("org.apache.camel.springboot:camel-swagger-java-starter:3.22.0")
-//    implementation("org.apache.camel.springboot:camel-spring-boot-starter:4.3.0")
-//    implementation("jakarta.servlet:jakarta.servlet-api:5.0.0")
-// https://mvnrepository.com/artifact/org.apache.camel.springboot/camel-jetty-starter
-    // https://mvnrepository.com/artifact/org.apache.camel.springboot/camel-spring-boot-starter
     implementation("org.apache.camel.springboot:camel-spring-boot-starter:4.3.0")
 
     implementation("jakarta.servlet:jakarta.servlet-api:5.0.0")
