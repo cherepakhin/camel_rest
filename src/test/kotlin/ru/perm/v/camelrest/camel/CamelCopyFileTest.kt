@@ -5,6 +5,9 @@ import org.apache.camel.builder.RouteBuilder
 import org.apache.camel.impl.DefaultCamelContext
 import org.junit.jupiter.api.Test
 import java.io.File
+import java.io.PrintWriter
+
+
 
 
 class CamelCopyFileTest {
@@ -13,10 +16,12 @@ class CamelCopyFileTest {
         val testDirectory = "/home/vasi/temp/testarea/copyfile"
         val srcDir = "/srcDir"
         val dstDir = "/dstDir"
-        val fileName = "/file1.txt"
-        val file1 = File(testDirectory + srcDir + fileName)
-        if (!file1.exists()) {
-            file1.createNewFile()
+
+        // generate test files
+        val countFIles = 3
+        for (i in 1..countFIles) {
+            val f = File("$testDirectory$srcDir/file$i.txt")
+            PrintWriter(f).use { out -> out.println("file $i")}
         }
 
         val ctx: CamelContext = DefaultCamelContext()
@@ -29,7 +34,11 @@ class CamelCopyFileTest {
         }
         ctx.addRoutes(route)
         ctx.start()
-        Thread.sleep(10000); // time for copy files. 1 second may not be not enough. Only for test.
+
+        // Only for test. Time for copy files. 1 second may not be not enough.
+        // In real application not needed.
+        // Context starting on boot application and not stopped until shutdown.
+        Thread.sleep(3000);
         ctx.stop()
     }
 }
