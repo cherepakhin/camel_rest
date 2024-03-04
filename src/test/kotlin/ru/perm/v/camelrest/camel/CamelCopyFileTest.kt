@@ -27,8 +27,10 @@ class CamelCopyFileTest {
             @Throws(Exception::class)
             override fun configure() {
                 // Опция `noop=true` означает, что файлы не будут удалены после обработки.
-                from("file://" + testDirectory + srcDir + "?noop=true")
-                    .to("file://" + testDirectory + dstDir)
+//                from("file://" + testDirectory + srcDir + "?noop=true")
+//                    .to("file://" + testDirectory + dstDir)
+                from("file://$testDirectory$srcDir?noop=true")
+                    .to("file://$testDirectory$dstDir")
             }
         }
         ctx.addRoutes(route)
