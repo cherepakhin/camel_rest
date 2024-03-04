@@ -32,6 +32,7 @@ class CamelConvertorCtrl {
     fun copyFile() {
         val context = DefaultCamelContext()
         context.addRoutes(camelCopyFileRoute)
+        //TODO: Все сдужебные мероприятия по поднятию контекста, route и т.д. перенести в Spring
         context.start()
 //        camelCopyFileRoute.let { context.stop() }
         // добавил метод sleep, чтобы дать приложению Camel время на копирование файлов https://habr.com/ru/companies/redhatrussia/articles/352188/
