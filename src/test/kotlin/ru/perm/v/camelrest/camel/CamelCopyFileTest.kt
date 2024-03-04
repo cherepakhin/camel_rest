@@ -28,6 +28,7 @@ class CamelCopyFileTest {
         val route: RouteBuilder = object : RouteBuilder() {
             @Throws(Exception::class)
             override fun configure() {
+                // Опция `noop=true` означает, что файлы не будут удалены после обработки.
                 from("file://" + testDirectory + srcDir+"?noop=true")
                     .to("file://" + testDirectory + dstDir)
             }
