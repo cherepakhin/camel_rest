@@ -32,7 +32,7 @@ class CamelCopyFileTest {
             override fun configure() {
                 // Опция `noop=true` означает, что файлы не будут удалены после обработки.
                 from("file://$testDirectory$srcDir?noop=true")
-                    .log(LoggingLevel.INFO, logger, "BODY: ${body().toString().substring(7)}") // trim prefic "simple{"
+                    .log(LoggingLevel.INFO, logger, "BODY: ${body().toString().substring(7)}") // trim prefix "simple{"
                     .to("file://$testDirectory$dstDir")
             }
         }
