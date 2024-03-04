@@ -29,7 +29,7 @@ class CamelCopyFileTest {
         }
         ctx.addRoutes(route)
         ctx.start()
-        Thread.sleep(10000); // time for copy files. 1 second may not be not enough.
+        Thread.sleep(10000); // time for copy files. 1 second may not be not enough. Only for test.
         ctx.stop()
     }
 }
