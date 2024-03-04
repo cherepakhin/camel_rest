@@ -17,7 +17,9 @@ class CamelCopyFileRoute(@Autowired val myConfig: MyConfig) : RouteBuilder() {
      * @see ru.perm.v.camelrest.CamelConvertorCtrl.copyFile()
      */
     override fun configure() {
+        logger.info("onCompletion")
         from(myConfig.camelContainer.jobParamCopyFile.srcDirectory)
+            .onCompletion().to("log:onCompletion")
             .to(myConfig.camelContainer.jobParamCopyFile.dstDirectory)
         logger.info("Copy files from ${myConfig.camelContainer.jobParamCopyFile.srcDirectory} to ${myConfig.camelContainer.jobParamCopyFile.dstDirectory}")
     }

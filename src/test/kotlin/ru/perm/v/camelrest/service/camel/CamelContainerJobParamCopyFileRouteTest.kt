@@ -54,6 +54,7 @@ class CamelContainerJobParamCopyFileRouteTest {
         context.addRoutes(CopyAllFileFromSrcDirToDstDirRoute(srcDirectory, dstDirectory))
         context.start()
 // ждать 2 секунды или пока не выполнится 1 задание см. выше ....whenDone(1)...
+// Bad idea.
         val matches = notify.matches(2, TimeUnit.SECONDS)
         Assertions.assertTrue(matches)
 // или тупо так сделать задержку, вместо

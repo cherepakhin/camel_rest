@@ -20,7 +20,7 @@ class CamelCopyFileRouteTest {
         context.addRoutes(route)
 
         context.start()
-        TimeUnit.SECONDS.sleep(2) // with 1 second timeout not working
+        TimeUnit.SECONDS.sleep(2) // with 1 second timeout not working. Bad idea.
         context.stop()
 
     }

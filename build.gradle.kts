@@ -92,6 +92,7 @@ dependencies {
 // validator
     implementation("org.hibernate.validator:hibernate-validator")
     implementation("org.apache.camel:camel-core:3.10.0")
+    implementation("org.apache.camel:camel-log:3.10.0")
 
     kapt("jakarta.annotation:jakarta.annotation-api")
 
