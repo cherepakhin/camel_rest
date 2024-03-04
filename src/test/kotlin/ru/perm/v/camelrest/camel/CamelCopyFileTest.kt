@@ -8,8 +8,6 @@ import java.io.File
 import java.io.PrintWriter
 
 
-
-
 class CamelCopyFileTest {
     @Test
     fun copyDirectory() {
@@ -21,7 +19,7 @@ class CamelCopyFileTest {
         val countFIles = 3
         for (i in 1..countFIles) {
             val f = File("$testDirectory$srcDir/file$i.txt")
-            PrintWriter(f).use { out -> out.println("file $i")}
+            PrintWriter(f).use { out -> out.println("file $i") }
         }
 
         val ctx: CamelContext = DefaultCamelContext()
@@ -29,7 +27,7 @@ class CamelCopyFileTest {
             @Throws(Exception::class)
             override fun configure() {
                 // Опция `noop=true` означает, что файлы не будут удалены после обработки.
-                from("file://" + testDirectory + srcDir+"?noop=true")
+                from("file://" + testDirectory + srcDir + "?noop=true")
                     .to("file://" + testDirectory + dstDir)
             }
         }
