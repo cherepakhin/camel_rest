@@ -12,6 +12,7 @@ import java.io.PrintWriter
 
 class CamelCopyFileTest {
     private val logger = LoggerFactory.getLogger(this.javaClass.name)
+
     @Test
     fun copyDirectory() {
         logger.info("START copyDirectory")
