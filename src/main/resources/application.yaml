@@ -15,3 +15,8 @@ myconfig:
       srcDirectory: ${myconfig.testDirectory}/srcDir?noop=true
       dstDirectory: ${myconfig.testDirectory}/dstDir
 
+logging:
+  level:
+    root: info
+  file:
+    path: log/
