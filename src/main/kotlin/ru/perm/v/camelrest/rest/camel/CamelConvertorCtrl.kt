@@ -15,7 +15,7 @@ class CamelConvertorCtrl {
     private val logger = LoggerFactory.getLogger(this.javaClass.name)
 
     @Autowired
-    var camelCopyFileRoute: CamelCopyFileRoute? = null
+    lateinit var camelCopyFileRoute: CamelCopyFileRoute
 
     private var counter = 0L
 
@@ -31,10 +31,10 @@ class CamelConvertorCtrl {
     @GetMapping("/copy_file")
     fun copyFile() {
         logger.info("$counter GET copy_file")
-        camelCopyFileRoute!!.start()
+        camelCopyFileRoute.start()
 //        val context = DefaultCamelContext()
 //        context.addRoutes(camelCopyFileRoute)
-//        //TODO: Все сдужебные мероприятия по поднятию контекста, route и т.д. перенести в Spring
+//        //TODO: Все служебные мероприятия по поднятию контекста, route и т.д. перенести в Spring
 //        context.start()
 //        camelCopyFileRoute.let { context.stop() }
 //        // добавил метод sleep, чтобы дать приложению Camel время на копирование файлов https://habr.com/ru/companies/redhatrussia/articles/352188/

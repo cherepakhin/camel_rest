@@ -28,23 +28,23 @@ class CamelCopyFileRoute(@Autowired val myConfig: MyConfig) : RouteBuilder() {
      * @see ru.perm.v.camelrest.CamelConvertorCtrl.copyFile()
      */
     override fun configure() {
-        from(myConfig.camelContainer.jobParamCopyFile.srcDirectory)
-            .log(LoggingLevel.INFO, logger, "BODY: ${body()}") // trim prefix "simple{"
-            .to(myConfig.camelContainer.jobParamCopyFile.dstDirectory)
-//        val route: RouteBuilder = object : RouteBuilder() {
-//            @Throws(Exception::class)
-//            override fun configure() {
-//                // Опция `noop=true` означает, что файлы не будут удалены после обработки.
-//                from(myConfig.camelContainer.jobParamCopyFile.srcDirectory)
-//                    .log(LoggingLevel.INFO, logger, "BODY: ${body().toString().substring(7)}") // trim prefix "simple{"
-//                    .to(myConfig.camelContainer.jobParamCopyFile.dstDirectory)
-//            }
-//        }
-//        camelContext.addRoutes(route)
-        camelContext.start()
-
-        Thread.sleep(3000);
-        camelContext.stop()
+//        from(myConfig.camelContainer.jobParamCopyFile.srcDirectory)
+//            .log(LoggingLevel.INFO, logger, "BODY: ${body()}") // trim prefix "simple{"
+//            .to(myConfig.camelContainer.jobParamCopyFile.dstDirectory)
+        val route: RouteBuilder = object : RouteBuilder() {
+            @Throws(Exception::class)
+            override fun configure() {
+                // Опция `noop=true` означает, что файлы не будут удалены после обработки.
+                from(myConfig.camelContainer.jobParamCopyFile.srcDirectory)
+                    .log(LoggingLevel.INFO, logger, "BODY: ${body().toString().substring(7)}") // trim prefix "simple{"
+                    .to(myConfig.camelContainer.jobParamCopyFile.dstDirectory)
+            }
+        }
+        camelContext.addRoutes(route)
+//        camelContext.start().also { camelContext.stop() } // не работает
+      camelContext.start() // работает. Но, че его все время дергать (start, wait, stop)?
+      Thread.sleep(3000);
+      camelContext.stop()
         logger.info("Copy files from ${myConfig.camelContainer.jobParamCopyFile.srcDirectory} to ${myConfig.camelContainer.jobParamCopyFile.dstDirectory}")
     }
 }
