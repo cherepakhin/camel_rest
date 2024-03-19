@@ -1,12 +1,10 @@
 package ru.perm.v.camelrest.camel
 
 import org.apache.camel.CamelContext
-import org.apache.camel.Expression
 import org.apache.camel.LoggingLevel
 import org.apache.camel.ProducerTemplate
 import org.apache.camel.builder.RouteBuilder
 import org.apache.camel.impl.DefaultCamelContext
-import org.apache.camel.model.language.SimpleExpression
 import org.junit.jupiter.api.Test
 import org.slf4j.LoggerFactory
 
@@ -25,8 +23,12 @@ class CamelDirectTest {
                 from("direct:start")
 //               .log(LoggingLevel.INFO, logger, "BODY: ${bodyAs(String::class.java)}") // "BODY: simple{This is test message}"
 //               .log(LoggingLevel.INFO, logger,"BODY: ${SimpleExpression("\${body}")}") // BODY: simple{******************This is test message******************}
-               .log(LoggingLevel.INFO, logger,"BODY: \${body}") // OK! ******************This is test message******************
-               .end()
+                    .log(
+                        LoggingLevel.INFO,
+                        logger,
+                        "BODY: \${body}"
+                    ) // OK! ******************This is test message******************
+                    .end()
             }
         }
         context.addRoutes(route)

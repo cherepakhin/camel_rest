@@ -43,9 +43,9 @@ class CamelCopyFileRoute(@Autowired val myConfig: MyConfig) : RouteBuilder() {
         }
         camelContext.addRoutes(route)
 //        camelContext.start().also { camelContext.stop() } // не работает
-      camelContext.start() // работает. Но, че его все время дергать (start, wait, stop)?
-      Thread.sleep(3000);
-      camelContext.stop()
+        camelContext.start() // работает. Но, че его все время дергать (start, wait, stop)?
+        Thread.sleep(3000);
+        camelContext.stop();
         logger.info("Copy files from ${myConfig.camelContainer.jobParamCopyFile.srcDirectory} to ${myConfig.camelContainer.jobParamCopyFile.dstDirectory}")
     }
 }
