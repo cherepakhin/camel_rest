@@ -36,7 +36,8 @@ class CamelCopyFileRoute(@Autowired val myConfig: MyConfig) : RouteBuilder() {
             override fun configure() {
                 // Опция `noop=true` означает, что файлы не будут удалены после обработки.
                 from(myConfig.camelContainer.jobParamCopyFile.srcDirectory)
-                    .log(LoggingLevel.INFO, logger, "BODY: ${body().toString().substring(7)}") // trim prefix "simple{"
+                    .log(LoggingLevel.INFO, logger,
+                        "BODY: ${body().toString().substring(7)}") // trim prefix "simple{"
                     .to(myConfig.camelContainer.jobParamCopyFile.dstDirectory)
             }
         }
