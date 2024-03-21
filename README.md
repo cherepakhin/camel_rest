@@ -11,6 +11,7 @@ Cоздать небольшое приложение на <b>Kotlin</b> с ис
 
 Подобный проект на __Java__ [https://github.com/cherepakhin/spring-boot-camel](https://github.com/cherepakhin/spring-boot-camel).
 
+(Для отправки запросов в REST Controller использована утилита [httpie](https://httpie.io/))
 ### Ручная проверка работоспособности сервиса
 
 [ru.perm.v.camelrest.EchoCtrl](https://github.com/cherepakhin/camel_rest/blob/dev/src/main/kotlin/ru/perm/v/camelrest/rest/EchoCtrl.kt):
@@ -20,8 +21,6 @@ $ http :8980/camel_rest/api/echo/aaa
 ````
 
 ### Для демонстрации сделаны Rest контроллеры в пакете [ru.perm.v.camelrest.rest.camel](https://github.com/cherepakhin/camel_rest/blob/dev/src/main/kotlin/ru/perm/v/camelrest/rest/camel/).
-
-Для отправки запросов в REST Controller использована утилита [httpie](https://httpie.io/).
 
 ## Функции Camel
 
