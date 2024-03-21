@@ -93,6 +93,6 @@ HTTP/1.1 200
 
 
 ### Ссылки:
-[Размещение параметров в applicaton.yaml](https://www.baeldung.com/spring-yaml)
+[Размещение СОБСТВЕННЫХ параметров в applicaton.yaml](https://www.baeldung.com/spring-yaml)
 
 
