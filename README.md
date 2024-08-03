@@ -26,7 +26,20 @@ $ http :8980/camel_rest/api/echo/aaa
 
 ### Копирование файлов
 
+По GET запросу, файлы копируются из каталога в каталог. Каталоги указаны в application.yaml.  
+
+````yaml
+myconfig:
+  testDirectory: file:/tmp/testarea
+  camelContainer:
+    jobParamCopyFile:
+      srcDirectory: ${myconfig.testDirectory}/srcDir?noop=true
+      dstDirectory: ${myconfig.testDirectory}/dstDir
+````
+
 [ru.perm.v.camelrest.camel.CamelCopyFileRoute](https://github.com/cherepakhin/camel_rest/blob/dev/src/main/kotlin/ru/perm/v/camelrest/rest/camel/CamelCopyFileRoute.kt):
+
+Выполнение запроса:
 
 ````shell
 $ http http://127.0.0.1:8980/camel_rest/api/camel/copy_file
