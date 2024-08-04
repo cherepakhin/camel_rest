@@ -11,6 +11,18 @@ Cоздать небольшое приложение на <b>Kotlin</b> с ис
 
 Подобный проект на __Java__ [https://github.com/cherepakhin/spring-boot-camel](https://github.com/cherepakhin/spring-boot-camel).
 
+### Запуск
+
+````shell
+$ ./gradlew bootRun
+````
+
+либо сделан скрипт запуска в корне проекта _run_project.sh_ 
+
+````shell
+$ ./run_project.sh
+````
+
 (Для отправки запросов в REST Controller использована утилита [httpie](https://httpie.io/))
 ### Ручная проверка работоспособности сервиса
 
