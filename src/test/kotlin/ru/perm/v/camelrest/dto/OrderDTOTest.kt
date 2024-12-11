@@ -3,6 +3,7 @@ package ru.perm.v.camelrest.dto
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import java.math.BigDecimal
+import kotlin.test.assertNotEquals
 
 class OrderDTOTest {
     @Test
@@ -21,5 +22,29 @@ class OrderDTOTest {
         assertEquals(10, orderDTO.id)
         assertEquals("NAME", orderDTO.name)
         assertEquals(BigDecimal(10.00), orderDTO.price)
+    }
+
+    @Test
+    fun equalsObj() {
+        val orderDTO1 = OrderDTO(10L, "NAME", BigDecimal(10.00))
+        val orderDTO2 = OrderDTO(10L, "NAME", BigDecimal(10.00))
+
+        assertEquals(orderDTO1, orderDTO2)
+    }
+
+    @Test
+    fun notEqualsObj() {
+        val orderDTO1 = OrderDTO(11L, "NAME", BigDecimal(10.00))
+        val orderDTO2 = OrderDTO(12L, "NAME", BigDecimal(10.00))
+
+        assertNotEquals(orderDTO1, orderDTO2)
+    }
+
+    @Test
+    fun hashCodeTest() {
+        val orderDTO1 = OrderDTO(11L, "NAME", BigDecimal(10.00))
+        val orderDTO2 = OrderDTO(11L, "NAME", BigDecimal(10.00))
+
+        assertEquals(orderDTO1.hashCode(), orderDTO2.hashCode())
     }
 }
