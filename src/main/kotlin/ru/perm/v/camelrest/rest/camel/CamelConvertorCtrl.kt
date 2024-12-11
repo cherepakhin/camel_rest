@@ -21,7 +21,7 @@ class CamelConvertorCtrl {
     @GetMapping("/echo/{mes}")
     fun echo(
         @PathVariable("mes")
-        mes: String
+        mes: String,
     ): String {
         logger.info("$counter GET $mes")
         return mes
