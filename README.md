@@ -1,7 +1,7 @@
 ## Различные тесты Apache Camel с Kotlin и Spring Boot
 
 ### Оглавление:
-<a href="#pookie">Цель</a><br/>
+[Цель](#target)<br/>
 [Запуск](#run)<br/>
 [Ручная проверка работоспособности сервиса](#manual_test)<br/>
 [Unit тестирование](#unit_test)<br/>
@@ -11,8 +11,8 @@
 [Примечания](#tose)<br/>
 [Ссылки](#links)<br/>
 
-
-### <a name="pookie">Цель</a>
+<a id="target"></a>
+### Цель
 
 Cоздать небольшое приложение на <b>Kotlin</b> с использованием <b>Spring Boot</b> и  [Camel](https://camel.apache.org/).
 
