@@ -41,6 +41,13 @@ $ ./run_project.sh
 ````shell
 $ http :8980/camel_rest/api/echo/aaa
 ````
+Подключен jacoco. Инструмент для анализа покрытия тестами. Запуск тестов с созданием отчета:
+
+````shell
+./gradlew test jacocoTestReport
+````
+
+Отчет будет в папке build/reports/jacoco/test/html/index.html. В отчете НЕТ информации о результатах тестирования, только протестирован участок кода или нет.
 
 ### Для демонстрации сделаны Rest контроллеры в пакете [ru.perm.v.camelrest.rest.camel](https://github.com/cherepakhin/camel_rest/blob/dev/src/main/kotlin/ru/perm/v/camelrest/rest/camel/).
 

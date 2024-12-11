@@ -5,7 +5,7 @@ import kotlin.test.assertEquals
 
 class ErrMessagesTest {
     @Test
-    fun constructorTest() {
+    fun constValNOT_FOUNDTest() {
         assertEquals("not found", ErrMessages.NOT_FOUND)
     }
 }
