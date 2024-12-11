@@ -33,9 +33,25 @@ class OrderDTOTest {
     }
 
     @Test
-    fun notEqualsObj() {
+    fun notEqualsById() {
         val orderDTO1 = OrderDTO(11L, "NAME", BigDecimal(10.00))
         val orderDTO2 = OrderDTO(12L, "NAME", BigDecimal(10.00))
+
+        assertNotEquals(orderDTO1, orderDTO2)
+    }
+
+    @Test
+    fun notEqualsByName() {
+        val orderDTO1 = OrderDTO(10L, "NAME", BigDecimal(10.00))
+        val orderDTO2 = OrderDTO(10L, "NAME2", BigDecimal(10.00))
+
+        assertNotEquals(orderDTO1, orderDTO2)
+    }
+
+    @Test
+    fun notEqualsByPrice() {
+        val orderDTO1 = OrderDTO(10L, "NAME", BigDecimal(10.00))
+        val orderDTO2 = OrderDTO(10L, "NAME", BigDecimal(11.00))
 
         assertNotEquals(orderDTO1, orderDTO2)
     }
