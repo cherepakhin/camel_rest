@@ -2,7 +2,14 @@
 
 ### Оглавление:
 [Цель](#target)<br/>
-[Unit тестирование](#unit_test)
+[Запуск](#run)<br/>
+[Ручная проверка работоспособности сервиса](#manual_test)<br/>
+[Unit тестирование](#unit_test)<br/>
+[Собственные параметры конфигурации в application.yaml](#yaml_params)<br/>
+[Deploy to Nexus](#nexus)<br/>
+[Запуск и разработка в offline режиме](#run_offline)<br/>
+[Примечания](#tose)<br/>
+[Ссылки](#links)<br/>
 
 <a id="target"></a>
 ### Цель
@@ -11,19 +18,22 @@ Cоздать небольшое приложение на <b>Kotlin</b> с ис
 
 Подобный проект на __Java__ [https://github.com/cherepakhin/spring-boot-camel](https://github.com/cherepakhin/spring-boot-camel).
 
+<a id="run"></a>
 ### Запуск
 
 ````shell
 $ ./gradlew bootRun
 ````
 
-либо сделан скрипт запуска в корне проекта _run_project.sh_ 
+сделан скрипт запуска в корне проекта _run_project.sh_ 
 
 ````shell
 $ ./run_project.sh
 ````
 
 (Для отправки запросов в REST Controller использована утилита [httpie](https://httpie.io/))
+
+<a id="manual_test"></a>
 ### Ручная проверка работоспособности сервиса
 
 [ru.perm.v.camelrest.EchoCtrl](https://github.com/cherepakhin/camel_rest/blob/dev/src/main/kotlin/ru/perm/v/camelrest/rest/EchoCtrl.kt):
@@ -59,28 +69,7 @@ myconfig:
 $ http http://127.0.0.1:8980/camel_rest/api/camel/copy_file
 ````
 
-### Примечания
-
-[application.yaml](https://github.com/cherepakhin/spring-boot-camel/blob/main/src/main/resources/application.yaml):
-
-````shell
-camel:
-    springboot:
-        main-run-controller: true
-````
-
-Запускает контроллер Camel и заменяет:
-
-````shell
-val context = DefaultCamelContext()
-context.addRoutes(camelCopyFileRoute)
-context.start()
-context.stop()
-````
-
-(см. [https://github.com/cherepakhin/camel_rest](https://github.com/cherepakhin/camel_rest/blob/dev/src/main/kotlin/ru/perm/v/camelrest/rest/CamelConvertorCtrl.kt))
-
-
+<a id="yaml_params"></a>
 #### Собственные параметры конфигурации в application.yaml
 
 Определение в [application.yaml](https://github.com/cherepakhin/camel_rest/blob/dev/src/main/resources/application.yaml):
@@ -113,17 +102,18 @@ HTTP/1.1 200
     },
     "testDirectory": "file:~/tmp/testarea"
 }
-
 ````
 
 Совет взят тут: [https://stackoverflow.com/questions/71689261/how-do-i-set-and-read-properties-in-a-springboot-application-using-kotlin](https://stackoverflow.com/questions/71689261/how-do-i-set-and-read-properties-in-a-springboot-application-using-kotlin)
 
+<a id="nexus"></a>
 ### Deploy to Nexus
 
 ````shell
 camel_rest/proj$ ./gradlew publish
 ````
 
+<a id="run_offline"></a>
 ### Запуск и разработка в offline режиме:
 
 ````shell
@@ -133,6 +123,30 @@ camel_rest/proj$ ./gradlew publish
 
 Библиотеки загружаются один раз.
 
+<a id="tose"></a>
+### Примечания
+
+[application.yaml](https://github.com/cherepakhin/spring-boot-camel/blob/main/src/main/resources/application.yaml):
+
+````shell
+camel:
+    springboot:
+        main-run-controller: true
+````
+
+Запускает контроллер Camel и заменяет:
+
+````shell
+val context = DefaultCamelContext()
+context.addRoutes(camelCopyFileRoute)
+context.start()
+context.stop()
+````
+
+(см. [https://github.com/cherepakhin/camel_rest](https://github.com/cherepakhin/camel_rest/blob/dev/src/main/kotlin/ru/perm/v/camelrest/rest/CamelConvertorCtrl.kt))
+
+
+<a id="links"></a>
 ### Ссылки:
 [Размещение СОБСТВЕННЫХ параметров в applicaton.yaml](https://www.baeldung.com/spring-yaml)
 
