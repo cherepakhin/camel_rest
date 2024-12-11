@@ -101,7 +101,7 @@ __myconfig__ использован в [ru.perm.v.camelrest.rest.ParamCtrl.kt](h
 Тестирование получения параметров Camel параметров:
 
 ````shell
-$ http 8980/camel_rest/api/params/myconfig
+$ http :8980/camel_rest/api/params/myconfig
 
 HTTP/1.1 200 
 {
@@ -118,6 +118,20 @@ HTTP/1.1 200
 
 Совет взят тут: [https://stackoverflow.com/questions/71689261/how-do-i-set-and-read-properties-in-a-springboot-application-using-kotlin](https://stackoverflow.com/questions/71689261/how-do-i-set-and-read-properties-in-a-springboot-application-using-kotlin)
 
+### Deploy to Nexus
+
+````shell
+camel_rest/proj$ ./gradlew publish
+````
+
+### Запуск и разработка в offline режиме:
+
+````shell
+./gradlew --offline test
+./gradlew --offline bootRun
+````
+
+Библиотеки загружаются один раз.
 
 ### Ссылки:
 [Размещение СОБСТВЕННЫХ параметров в applicaton.yaml](https://www.baeldung.com/spring-yaml)
