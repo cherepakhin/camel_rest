@@ -145,9 +145,6 @@ context.stop()
 
 (см. [https://github.com/cherepakhin/camel_rest](https://github.com/cherepakhin/camel_rest/blob/dev/src/main/kotlin/ru/perm/v/camelrest/rest/CamelConvertorCtrl.kt))
 
-
 <a id="links"></a>
 ### Ссылки:
 [Размещение СОБСТВЕННЫХ параметров в applicaton.yaml](https://www.baeldung.com/spring-yaml)
-
-
