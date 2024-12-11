@@ -13,4 +13,13 @@ class OrderDTOTest {
         assertEquals("", orderDTO.name)
         assertEquals(BigDecimal.ZERO, orderDTO.price)
     }
+
+    @Test
+    fun constructorWithVals() {
+        val orderDTO = OrderDTO(10L, "NAME", BigDecimal(10.00))
+
+        assertEquals(10, orderDTO.id)
+        assertEquals("NAME", orderDTO.name)
+        assertEquals(BigDecimal(10.00), orderDTO.price)
+    }
 }
