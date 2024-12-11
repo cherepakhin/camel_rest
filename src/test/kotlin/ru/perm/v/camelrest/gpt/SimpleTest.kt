@@ -7,9 +7,9 @@ import kotlin.test.assertNotEquals
 class SimpleTest {
     @Test
     fun messageNotEmpty() {
-        val str ="STRING";
+        val str ="STRING"
 
-        assertNotEquals("", str);
-        assertEquals("STRING", str);
+        assertNotEquals("", str)
+        assertEquals("STRING", str)
     }
 }
