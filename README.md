@@ -25,7 +25,7 @@ Cоздать небольшое приложение на <b>Kotlin</b> с ис
 $ ./gradlew bootRun
 ````
 
-сделан скрипт запуска в корне проекта _run_project.sh_ 
+Сделан скрипт запуска в корне проекта _run_project.sh_ 
 
 ````shell
 $ ./run_project.sh
@@ -61,7 +61,7 @@ myconfig:
 
 [ru.perm.v.camelrest.camel.CamelCopyFileRoute](https://github.com/cherepakhin/camel_rest/blob/dev/src/main/kotlin/ru/perm/v/camelrest/rest/camel/CamelCopyFileRoute.kt):
 
-( о задании СВОИХ параметров в application.yaml описано в [https://v.perm.ru/main/index.php/homepage/69-prostoj-proekt-na-kotlin-i-spring-boot#add_param_to_application_yaml](https://v.perm.ru/main/index.php/homepage/69-prostoj-proekt-na-kotlin-i-spring-boot#add_param_to_application_yaml) )
+(о задании СВОИХ параметров в application.yaml описано в [https://v.perm.ru/main/index.php/homepage/69-prostoj-proekt-na-kotlin-i-spring-boot#add_param_to_application_yaml](https://v.perm.ru/main/index.php/homepage/69-prostoj-proekt-na-kotlin-i-spring-boot#add_param_to_application_yaml))
 
 Выполнение запроса:
 
