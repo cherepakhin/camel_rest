@@ -15,8 +15,8 @@ class CamelContainerJobParamCopyFileRouteTest {
     /**
      * Copy all files from directory "~/temp/testarea/srcDir"
      * to directory "~/temp/testarea/dstDir".
-     * if "~/temp/testarea/srcDir" does not exists, create it.
-     * if "~/temp/testarea/dstDir" does not exists, create it.
+     * if "~/temp/testarea/srcDir" does not exist, create it.
+     * if "~/temp/testarea/dstDir" does not exist, create it.
      * subdirectories will be ignored and don't copied.
      */
     class CopyAllFileFromSrcDirToDstDirRoute(
@@ -49,11 +49,11 @@ class CamelContainerJobParamCopyFileRouteTest {
         Files.deleteIfExists(Path.of(dstFilePath2))
 
         val context = DefaultCamelContext()
-// ждать одно задание "whenDone(1)"
+// Ждать одно задание "whenDone(1)"
         val notify = NotifyBuilder(context).whenDone(1).create()
         context.addRoutes(CopyAllFileFromSrcDirToDstDirRoute(srcDirectory, dstDirectory))
         context.start()
-// ждать 2 секунды или пока не выполнится 1 задание см. выше ....whenDone(1)...
+// Ждать 2 секунды или пока не выполнится 1 задание см. выше ....whenDone(1)...
 // Bad idea.
         val matches = notify.matches(2, TimeUnit.SECONDS)
         Assertions.assertTrue(matches)
@@ -77,7 +77,7 @@ class CamelContainerJobParamCopyFileRouteTest {
         if(!file.exists()) {
             file.createNewFile()
         }
-        Assertions.assertTrue(file.exists());
+        Assertions.assertTrue(file.exists())
         Files.deleteIfExists(file.toPath())
     }
 }

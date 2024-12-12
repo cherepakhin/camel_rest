@@ -18,7 +18,7 @@ import ru.perm.v.camelrest.rest.camel.CamelConvertorCtrl
 class CamelConvertorCtrlMockMvcTest {
 
     @Autowired
-    lateinit private var mockMvc: MockMvc
+    private lateinit var mockMvc: MockMvc
 
     @Test
     fun checkEchoMessage() {

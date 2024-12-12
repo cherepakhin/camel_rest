@@ -15,8 +15,11 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers
 class EchoCtrlMockMvcTest {
 
     @Autowired
-    lateinit private var mockMvc: MockMvc
+    private lateinit var mockMvc: MockMvc
 
+    /**
+     * Test REST echo controller
+     */
     @Test
     fun checkEchoMessage() {
         val mes = mockMvc.perform(MockMvcRequestBuilders.get("/echo/ECHO_MESSAGE"))

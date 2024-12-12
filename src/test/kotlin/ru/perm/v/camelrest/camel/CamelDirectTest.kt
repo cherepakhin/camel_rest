@@ -21,7 +21,7 @@ class CamelDirectTest {
             @Throws(Exception::class)
             override fun configure() {
                 from("direct:start")
-//               .log(LoggingLevel.INFO, logger, "BODY: ${bodyAs(String::class.java)}") // "BODY: simple{This is test message}"
+//               .log(LoggingLevel.INFO, logger, "BODY: ${bodyAs(String::class.java)}") // "BODY: simple{This is testing message}"
 //               .log(LoggingLevel.INFO, logger,"BODY: ${SimpleExpression("\${body}")}") // BODY: simple{******************This is test message******************}
                     .log(
                         LoggingLevel.INFO,

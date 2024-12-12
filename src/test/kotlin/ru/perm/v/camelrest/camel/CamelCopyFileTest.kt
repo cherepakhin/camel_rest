@@ -21,8 +21,8 @@ class CamelCopyFileTest {
         val dstDir = "/dstDir"
 
         // generate test files
-        val countFIles = 3
-        for (i in 1..countFIles) {
+        val countFiles: Int = 3
+        for (i in 1..countFiles) {
             val f = File("$testDirectory$srcDir/file$i.txt")
             PrintWriter(f).use { out -> out.println("===================== content file$i") }
         }
@@ -40,11 +40,13 @@ class CamelCopyFileTest {
         ctx.addRoutes(route)
         ctx.start()
 
-        // Only for test. Time for copy files. 1 second may not be not enough.
+
+
+        // Only 111for test. Time for copy files. 1 second may not be not enough.
         // In real application not needed.
         // Context starting on boot application and not stopped until shutdown.
         // Bad idea.
-        Thread.sleep(3000);
+        Thread.sleep(3000)
         ctx.stop()
     }
 }

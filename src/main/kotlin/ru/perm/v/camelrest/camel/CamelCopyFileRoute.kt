@@ -1,7 +1,6 @@
 package ru.perm.v.camelrest.camel
 
 import org.apache.camel.CamelContext
-import org.apache.camel.LoggingLevel
 import org.apache.camel.builder.RouteBuilder
 import org.apache.camel.impl.DefaultCamelContext
 import org.slf4j.LoggerFactory
@@ -25,7 +24,7 @@ class CamelCopyFileRoute(@Autowired val myConfig: MyConfig) : RouteBuilder() {
     /**
      * Copy file from src to dst
      * for run see:
-     * @see ru.perm.v.camelrest.CamelConvertorCtrl.copyFile()
+     * @see ru.perm.v.camelrest.rest.camel.CamelConvertorCtrl.copyFile()
      */
     override fun configure() {
 //        from(myConfig.camelContainer.jobParamCopyFile.srcDirectory)
