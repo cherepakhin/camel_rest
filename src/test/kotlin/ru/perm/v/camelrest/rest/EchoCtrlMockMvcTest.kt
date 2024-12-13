@@ -9,6 +9,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers
+import kotlin.test.assertEquals
 
 @ExtendWith(SpringExtension::class)
 @WebMvcTest(EchoCtrl::class)
@@ -18,14 +19,29 @@ class EchoCtrlMockMvcTest {
     private lateinit var mockMvc: MockMvc
 
     /**
-     * Test REST echo controller
+     * Test REST echo controller, check message
      */
     @Test
     fun checkEchoMessage() {
         val mes = mockMvc.perform(MockMvcRequestBuilders.get("/echo/ECHO_MESSAGE"))
             .andExpect(MockMvcResultMatchers.status().isOk)
             .andReturn()
-
         Assertions.assertEquals("ECHO_MESSAGE", mes.response.contentAsString)
+    }
+
+    @Test
+    fun checkEmptyMessage() {
+        val result = mockMvc.perform(MockMvcRequestBuilders.get("/echo"))
+            .andExpect(MockMvcResultMatchers.status().is5xxServerError)
+            .andReturn()
+        assertEquals("Message empty.", result.resolvedException.message)
+    }
+
+    @Test
+    fun checkEmptyMessageWithSlash() {
+        val result = mockMvc.perform(MockMvcRequestBuilders.get("/echo/"))
+            .andExpect(MockMvcResultMatchers.status().is5xxServerError)
+            .andReturn()
+        assertEquals("Message empty.", result.resolvedException.message)
     }
 }
