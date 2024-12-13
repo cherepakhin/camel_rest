@@ -26,6 +26,7 @@ class EchoCtrlMockMvcTest {
         val mes = mockMvc.perform(MockMvcRequestBuilders.get("/echo/ECHO_MESSAGE"))
             .andExpect(MockMvcResultMatchers.status().isOk)
             .andReturn()
+
         Assertions.assertEquals("ECHO_MESSAGE", mes.response.contentAsString)
     }
 
@@ -34,6 +35,7 @@ class EchoCtrlMockMvcTest {
         val result = mockMvc.perform(MockMvcRequestBuilders.get("/echo"))
             .andExpect(MockMvcResultMatchers.status().is5xxServerError)
             .andReturn()
+
         assertEquals("Message empty.", result.resolvedException!!.message)
     }
 
@@ -42,6 +44,7 @@ class EchoCtrlMockMvcTest {
         val result = mockMvc.perform(MockMvcRequestBuilders.get("/echo/"))
             .andExpect(MockMvcResultMatchers.status().is5xxServerError)
             .andReturn()
+
         assertEquals("Message empty.", result.resolvedException!!.message)
     }
 
@@ -50,6 +53,7 @@ class EchoCtrlMockMvcTest {
         val result = mockMvc.perform(MockMvcRequestBuilders.get("/echo"))
             .andExpect(MockMvcResultMatchers.status().is5xxServerError)
             .andReturn()
+
         assertEquals("Message empty.", result.resolvedException!!.message)
     }
 }
