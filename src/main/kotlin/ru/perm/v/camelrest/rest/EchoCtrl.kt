@@ -8,16 +8,19 @@ import org.springframework.web.bind.annotation.RestController
 import ru.perm.v.camelrest.rest.error.BadRequestException
 
 @RestController
-@RequestMapping("/echo")
+@RequestMapping("/demo")
 class EchoCtrl {
     private val logger = LoggerFactory.getLogger(this.javaClass.name)
     private var counter = 0L
 
-    @GetMapping("")
+
+    // http http://127.0.0.1:8980/camel_rest/api/demo/e
+    @GetMapping("/e")
     fun echoStr() {
         throwEmptyMessage()
     }
 
+    // http http://127.0.0.1:8980/camel_rest/api/demo/MESSAGE
     @GetMapping("/{mes}")
     fun echoStr(
         @PathVariable("mes")

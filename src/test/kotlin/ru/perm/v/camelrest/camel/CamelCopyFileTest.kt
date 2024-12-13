@@ -21,7 +21,7 @@ class CamelCopyFileTest {
         val dstDir = "/dstDir"
 
         // generate test files
-        val countFiles: Int = 3
+        val countFiles = 3
         for (i in 1..countFiles) {
             val f = File("$testDirectory$srcDir/file$i.txt")
             PrintWriter(f).use { out -> out.println("===================== content file$i") }
