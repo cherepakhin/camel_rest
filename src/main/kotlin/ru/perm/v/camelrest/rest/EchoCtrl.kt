@@ -15,8 +15,7 @@ class EchoCtrl {
 
     @GetMapping("")
     fun echoStr() {
-            logger.error("Message empty.")
-            throw BadRequestException("Message empty.")
+        throwEmptyMessage()
     }
 
     @GetMapping("/{mes}")
@@ -25,10 +24,15 @@ class EchoCtrl {
         mes: String
     ): String {
         if (mes.isEmpty()) {
-            logger.error("Message empty.")
-            throw BadRequestException("Message empty.")
+            throwEmptyMessage()
         }
         logger.info("$counter GET $mes")
         return mes
     }
+
+    fun throwEmptyMessage() {
+        logger.error("Message empty.")
+        throw BadRequestException("Message empty.")
+    }
+
 }
