@@ -14,7 +14,7 @@ class EchoCtrl {
     private var counter = 0L
 
     @GetMapping("")
-    fun echoStr(): Unit {
+    fun echoStr() {
             logger.error("Message empty.")
             throw BadRequestException("Message empty.")
     }
