@@ -35,7 +35,10 @@ class EchoCtrlMockMvcTest {
         val result = mockMvc.perform(MockMvcRequestBuilders.get("/echo")).andReturn()
 
         assertEquals(503, result.response.status)
-        assertEquals("Message empty.", result.resolvedException.message)
+        assertEquals(
+            "Message empty.",
+            result.resolvedException?.message
+        )
     }
 
     @Test
@@ -43,7 +46,6 @@ class EchoCtrlMockMvcTest {
         val result = mockMvc.perform(MockMvcRequestBuilders.get("/echo/")).andReturn()
 
         assertEquals(503, result.response.status)
-        assertEquals("Message empty.", result.resolvedException.message)
+        assertEquals("Message empty.", result.resolvedException?.message)
     }
-
 }

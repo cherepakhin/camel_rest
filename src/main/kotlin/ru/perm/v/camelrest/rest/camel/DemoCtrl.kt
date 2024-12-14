@@ -17,7 +17,7 @@ class DemoCtrl {
         @PathVariable("message")
         message: String,
     ): String {
-        logger.info("GET /demo/echo $message")
+        logger.info("GET /demo/$message")
         return message
     }
 
