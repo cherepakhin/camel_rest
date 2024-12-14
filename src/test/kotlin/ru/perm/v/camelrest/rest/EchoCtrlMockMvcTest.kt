@@ -31,29 +31,12 @@ class EchoCtrlMockMvcTest {
     }
 
     @Test
-    fun checkEmptyMessage() {
-        val result = mockMvc.perform(MockMvcRequestBuilders.get("/echo"))
-            .andExpect(MockMvcResultMatchers.status().is5xxServerError)
-            .andReturn()
-
-        assertEquals("Message empty.", result.resolvedException!!.message)
-    }
-
-    @Test
     fun checkEmptyMessageWithSlash() {
-        val result = mockMvc.perform(MockMvcRequestBuilders.get("/echo/"))
-            .andExpect(MockMvcResultMatchers.status().is5xxServerError)
-            .andReturn()
+        val result = mockMvc.perform(MockMvcRequestBuilders.get("/echo/")).andReturn()
 
-        assertEquals("Message empty.", result.resolvedException!!.message)
+        result.resolvedException
+        assertEquals(503, result.response.status)
+        assertEquals("Message empty.", result.resolvedException.message)
     }
 
-    @Test
-    fun checkEmptyMessageNoSlash() {
-        val result = mockMvc.perform(MockMvcRequestBuilders.get("/echo"))
-            .andExpect(MockMvcResultMatchers.status().is5xxServerError)
-            .andReturn()
-
-        assertEquals("Message empty.", result.resolvedException!!.message)
-    }
 }

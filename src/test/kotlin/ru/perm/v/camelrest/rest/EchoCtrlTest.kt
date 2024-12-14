@@ -11,7 +11,7 @@ class EchoCtrlTest {
         val ctrl = EchoCtrl()
 
         val excpt = assertThrows<BadRequestException> {
-            ctrl.echoStr()
+            ctrl.echoStr("")
         }
 
         assertEquals("Message empty.", excpt.message)

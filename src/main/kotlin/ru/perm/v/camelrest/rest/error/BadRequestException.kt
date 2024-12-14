@@ -4,5 +4,5 @@ import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.ResponseStatus
 
 // Answer with message
-@ResponseStatus(HttpStatus.BAD_GATEWAY)
+@ResponseStatus(HttpStatus.SERVICE_UNAVAILABLE)
 class BadRequestException(messageError: String?) : RuntimeException(messageError)
