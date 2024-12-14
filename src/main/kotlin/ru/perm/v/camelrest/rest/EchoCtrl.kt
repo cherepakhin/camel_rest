@@ -13,10 +13,15 @@ class EchoCtrl {
     private val logger = LoggerFactory.getLogger(this.javaClass.name)
     private var counter = 0L
 
-    // for demo: http http://127.0.0.1:8980/camel_rest/api/echo
-    // for demo: http http://127.0.0.1:8980/camel_rest/api/echo/
+    // Demo. For demo: http http://127.0.0.1:8980/camel_rest/api/echo (в конце нет слеша)
     @GetMapping("")
     fun badRequest() {
+        throwEmptyMessage()
+    }
+
+    // Demo. For demo: http http://127.0.0.1:8980/camel_rest/api/echo/ (со слешем на конце)
+    @GetMapping("/")
+    fun badRequestWithSlash() {
         throwEmptyMessage()
     }
 

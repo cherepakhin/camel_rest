@@ -31,6 +31,14 @@ class EchoCtrlMockMvcTest {
     }
 
     @Test
+    fun checkEmptyMessageNoSlash() {
+        val result = mockMvc.perform(MockMvcRequestBuilders.get("/echo")).andReturn()
+
+        assertEquals(503, result.response.status)
+        assertEquals("Message empty.", result.resolvedException.message)
+    }
+
+    @Test
     fun checkEmptyMessageWithSlash() {
         val result = mockMvc.perform(MockMvcRequestBuilders.get("/echo/")).andReturn()
 
